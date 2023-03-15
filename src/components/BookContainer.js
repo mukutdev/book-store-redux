@@ -1,42 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+import React from 'react';
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Manage Bookstore</title>
-
-  <link rel="stylesheet" href="./styles/style.css" />
-</head>
-
-<body>
-  <nav class="py-4 2xl:px-6">
-    <div class="container flex items-center justify-between">
-      <img src="./images/logo.svg" width="150px" class="object-contain" />
-
-      <ul class="hidden md:flex items-center space-x-6">
-        <li class="font-semibold cursor-pointer">Book Store</li>
-        <li class="cursor-pointer">Wishlist</li>
-        <li class="cursor-pointer">My Collection</li>
-      </ul>
-
-      <form class="flex items-center">
-        <div class="group relative rounded-md bg-white">
-          <svg width="20" height="20" fill="currentColor"
-            class="absolute left-3 top-1/2 -mt-2.5 text-slate-400 pointer-events-none group-focus-within:text-primary">
-            <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z">
-            </path>
-          </svg>
-          <input type="text" placeholder="Filter books..." class="search" id="lws-searchBook" />
-        </div>
-      </form>
-    </div>
-  </nav>
-
-  <main class="py-12 2xl:px-6">
-    <div class="container grid xl:grid-cols-[auto_350px] 2xl:grid-cols-[auto_400px] gap-4 2xl:gap-8">
+const BookContainer = () => {
+    return (
+        <div class="container grid xl:grid-cols-[auto_350px] 2xl:grid-cols-[auto_400px] gap-4 2xl:gap-8">
       <div class="order-2 xl:-order-1">
         <div class="flex items-center justify-between mb-12">
           <h4 class="mt-2 text-xl font-bold">Book List</h4>
@@ -47,7 +13,7 @@
           </div>
         </div>
         <div class="lws-bookContainer">
-          <!-- Card 1 -->
+          {/* <!-- Card 1 --> */}
           <div class="book-card">
             <img class="h-[240px] w-[170px] object-cover lws-bookThumbnail"
               src="https://m.media-amazon.com/images/P/B07DZ86WP7.01._SCLZZZZZZZ_SX500_.jpg" alt="book" />
@@ -138,7 +104,7 @@
         </div>
       </div>
     </div>
-  </main>
-</body>
+    );
+};
 
-</html>
+export default BookContainer;
