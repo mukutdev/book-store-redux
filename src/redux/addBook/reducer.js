@@ -1,4 +1,4 @@
-import { ADD_BOOK } from "./actionType";
+import { ADD_BOOK, LOADED_BOOKS } from "./actionType";
 import initialState from "./initialState";
 
 
@@ -10,6 +10,9 @@ const nextId = (books)=>{
 
 const bookReducer = (state = initialState , action)=>{
      switch (action.type) {
+        case LOADED_BOOKS:
+            return action.payload
+     
         case ADD_BOOK:
             return [
                     ...state,
@@ -19,8 +22,8 @@ const bookReducer = (state = initialState , action)=>{
             ]
      
         default:
-            break;
+            return state;
      }
 }
 
-export default bookReducer
+export default bookReducer;

@@ -3,7 +3,7 @@ import bookReducer from "./addBook/reducer"
 
 
 const rootReducer = combineReducers({
-    books : bookReducer
+    books : bookReducer,
 })
 
 export default rootReducer;
