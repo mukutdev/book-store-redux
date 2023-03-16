@@ -3,10 +3,10 @@ import initialState from "./initialState";
 
 
 
-const nextId = (books)=>{
-    const maxId = books.reduce((maxId , book) => Math.max(maxId , book.id) , -1)
-    return maxId + 1    
-}
+// const nextId = (books)=>{
+//     const maxId = books.reduce((maxId , book) => Math.max(maxId , book.id) , -1)
+//     return maxId + 1    
+// }
 
 const bookReducer = (state = initialState , action)=>{
      switch (action.type) {
@@ -17,7 +17,7 @@ const bookReducer = (state = initialState , action)=>{
             return [
                     ...state,
                     {
-                        id : nextId(state), ...action.payload
+                     ...action.payload
                     }
             ]
      
