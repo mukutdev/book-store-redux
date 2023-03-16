@@ -12,7 +12,6 @@ const addBook = (formData) =>{
         });
 
         const books = await response.json()
-        console.log(books)
         dispatch(addNewBook(books)) 
     }
 }
