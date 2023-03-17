@@ -10,6 +10,8 @@ const BookContainer = () => {
   const books = useSelector(state => state.books);
   const [filter, setFilter] = useState(false);
   const [searchText, setSearch] = useState("");
+  const [editBookForm , setEditBookForm] = useState(null)
+  const [isUpdate , setIsUpdate] = useState(false)
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -33,6 +35,10 @@ const BookContainer = () => {
     }
   };
 
+  const handleEditBook = (book)=>{
+    setEditBookForm(book)
+  }
+
   return (
     <>
       <Header setSearch={setSearch} />
@@ -46,12 +52,12 @@ const BookContainer = () => {
               .filter(searchFilterHandler)
               .filter(featuredBooksHandler)
               .map(book => (
-                <BookCard key={book.id} book={book} />
+                <BookCard setIsUpdate={setIsUpdate} key={book.id} book={book}  handleEditBook={handleEditBook} />
               ))}
           </div>
         </div>
         <div>
-          <BookAddForm />
+          <BookAddForm isUpdate={isUpdate} setIsUpdate={setIsUpdate} editBookForm={editBookForm} />
         </div>
       </div>
     </>
